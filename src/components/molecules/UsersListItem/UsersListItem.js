@@ -1,25 +1,21 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../atoms/Button/Button';
-import { Wrapper, StorageButton, StorageInfo } from './UsersListItem.styles';
-
-const showIndex = (index) => alert(`This is student #${index + 1}`);
+import Button from 'components/atoms/Button/Button';
+import { StyledAverage, StyledInfo, Wrapper } from './UsersListItem.styles';
 
 const UsersListItem = ({
-  index,
+  deleteUser,
   userData: { average, name, attendance = '0%' },
 }) => (
   <Wrapper>
-    <StorageButton value={average}>
-      <div>{average}</div>
-    </StorageButton>
-
-    <StorageInfo>
-      <p>{name}</p>
-      <p>{attendance}</p>
-    </StorageInfo>
-    <Button onClick={() => showIndex(index)}></Button>
+    <StyledAverage value={average}>{average}</StyledAverage>
+    <StyledInfo>
+      <p>
+        {name}
+        <Button onClick={() => deleteUser(name)} />
+      </p>
+      <p>attendance: {attendance}</p>
+    </StyledInfo>
   </Wrapper>
 );
 

@@ -1,25 +1,19 @@
-/* eslint-disable prettier/prettier */
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-html {
+  html {
     box-sizing: border-box;
-    background-color: ${({ theme }) => theme.colors.lightGrey};
-}
-
-*,*::after, *::before {
+  }
+  
+  *, *::after, *::before {
     box-sizing: inherit;
- 
-}
-
-body {
+  }
+  
+  body {
     font-family: 'Montserrat', sans-serif;
-}
-
-a, button {
+  }
+  
+  a, button {
     font-family: 'Montserrat', sans-serif;
-}
-
+  }
 `;
