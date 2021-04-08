@@ -19,6 +19,12 @@ const mockAPI = (success) => {
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
+  const [formValues, setFormValues] = useState({
+    name: '',
+    attendance: '',
+    average: '',
+  });
+
   const [isLoading, setLoadingState] = useState([]);
 
   useEffect(() => {
@@ -36,14 +42,51 @@ const UsersList = () => {
     setUsers(filteredUsers);
   };
 
+  const handleInputChange = (e) => {
+    console.log(formValues);
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  const handleAddUser = (e) => {
+    e.preventDefault();
+    const newUser = {
+      name: formValues.name,
+      attendance: formValues.attendance,
+      average: formValues.average,
+    };
+    setUsers([newUser, ...users]);
+    setFormValues({
+      name: '',
+      attendance: '',
+      average: '',
+    });
+  };
   return (
     <>
-      <Wrapper>
+      <Wrapper as="form" onSubmit={handleAddUser}>
         <h2>Add new student!</h2>
-        <FormField label="Name" id="name" name="name" />
-        <FormField label="Attendance" id="name" name="name" />
-        <FormField label="Average" id="name" name="name" />
-        <AddButton>Add</AddButton>
+        <FormField
+          label="Name"
+          id="name"
+          name="name"
+          value={formValues.name}
+          onChange={handleInputChange}
+        />
+        <FormField
+          label="Attendance"
+          id="attendance"
+          name="attendance"
+          value={formValues.attendance}
+          onChange={handleInputChange}
+        />
+        <FormField
+          label="Average"
+          id="average"
+          name="average"
+          value={formValues.average}
+          onChange={handleInputChange}
+        />
+        <AddButton type="submit">Add</AddButton>
       </Wrapper>
       <Wrapper>
         <h1>{isLoading ? 'Loading...' : 'Users List'}</h1>

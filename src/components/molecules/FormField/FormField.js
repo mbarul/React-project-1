@@ -13,13 +13,30 @@ const Wrapper = styled.div`
     margin: 5px;
     background-color: ${({ theme }) => theme.colors.success};
   }
+  ${Input} {
+    border-radius: 8%;
+  }
 `;
 
-const FormField = ({ label, name, id, type = 'text', ...props }) => {
+const FormField = ({
+  onChange,
+  value,
+  label,
+  name,
+  id,
+  type = 'text',
+  ...props
+}) => {
   return (
     <Wrapper>
       <Label htmlFor={id}>{label}</Label>
-      <Input name={name} id={id} type={type} />
+      <Input
+        name={name}
+        id={id}
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
     </Wrapper>
   );
 };
