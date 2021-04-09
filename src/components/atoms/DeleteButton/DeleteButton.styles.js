@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+/*styles*/
 export const StyledButton = styled.button`
   width: 22px;
   height: 22px;

@@ -1,32 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+/*importing library proptypes*/
 import PropTypes from 'prop-types';
-import { Label } from '../../atoms/Label/Label';
-import { Input } from '../../atoms/Input/Input';
+import { Label } from 'components/atoms/Label/Label';
+import { Input } from 'components/atoms/Input/Input';
 
+/*styles of form field */
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   ${Label} {
-    margin: 5px;
-    background-color: ${({ theme }) => theme.colors.success};
-  }
-  ${Input} {
-    border-radius: 8%;
+    margin: 10px 0;
   }
 `;
 
-const FormField = ({
-  onChange,
-  value,
-  label,
-  name,
-  id,
-  type = 'text',
-  ...props
-}) => {
+const FormField = ({ onChange, value, label, name, id, type = 'text' }) => {
   return (
     <Wrapper>
       <Label htmlFor={id}>{label}</Label>
@@ -40,7 +30,7 @@ const FormField = ({
     </Wrapper>
   );
 };
-
+/*PropTypes*/
 FormField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

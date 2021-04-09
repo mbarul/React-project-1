@@ -1,14 +1,15 @@
-/* eslint-disable prettier/prettier */
 import styled from 'styled-components';
 
+/*styles of input - place where we write to add new users*/
 export const Input = styled.input`
   padding: 5px 8px;
-  border: 1px solid ${({ theme }) => theme.colors.lightPurple};
+  border: 1px solid ${({ theme }) => theme.colors.darkPurple};
   box-sizing: border-box;
   box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.09);
+  border-radius: 25px;
 
   &:focus {
     outline: none;
-    box-shadow: -2px 4px 18px rgba(115, 124, 142, 0.09);
+    box-shadow: -2px 4px 10px rgba(115, 124, 142, 0.3);
   }
 `;

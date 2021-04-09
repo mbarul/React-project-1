@@ -1,7 +1,10 @@
 import React from 'react';
+/*importing icon*/
 import { ReactComponent as DeleteIcon } from 'assets/icons/delete-icon.svg';
-import { StyledButton } from './DeleteButton.styles';
+/*importing styles of button*/
+import { StyledButton } from 'components/atoms/DeleteButton/DeleteButton.styles';
 
+/*delete button component */
 const DeleteButton = (props) => (
   <StyledButton {...props}>
     <DeleteIcon />
