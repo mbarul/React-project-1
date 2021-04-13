@@ -60,11 +60,13 @@ const Root = () => {
       <ThemeProvider theme={theme}>
         {/* Setting global styles*/}
         <GlobalStyle />
+        {/*Main template includes: navigation and else components of our navigation*/}
         <MainTemplate>
           <Wrapper>
             {/* navigaion to change pages without reload browser*/}
-
             <Switch>
+              {/*Route of our website- changes of pages*/}
+              {/*page-addUser*/}
               <Route path="/add-user">
                 <AddUser
                   formValues={formValues}
@@ -72,6 +74,7 @@ const Root = () => {
                   handleInputChange={handleInputChange}
                 />
               </Route>
+              {/*page-Main*/}
               <Route path="/">
                 <Dashboard deleteUser={deleteUser} users={users} />
               </Route>

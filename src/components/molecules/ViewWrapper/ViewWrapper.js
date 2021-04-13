@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+//styles of components like userlist and adduser
 /*styles*/
 export const ViewWrapper = styled.div`
   margin: 25px;
