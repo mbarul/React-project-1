@@ -16,7 +16,12 @@ import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
 import AddUser from './AddUser';
 import Dashboard from './Dashboard';
 import UsersProvider from 'providers/UsersProvider';
-
+//propsy to informacje przekazane do komponentu, przekazywane w rózny sposób(np. dane,funkcje)
+//Propsy zostały przekazane z rodzica Userlist -usersData do dziecka UsersListitem - idealny przykład
+//Propsy można destrukturyzować
+//PropTypes umożliwia nam na weryfikowanie tego czy przekazane propsy do componentu mają odpowiednią postać
+//cd. np jak przekazujemy liczby to nie chcemy przekazać stringa
+//cd zabiezpiecza nas by typy danych się zgadzały, jest po prostu obiektem, gdzie są klucze, właściwości
 /*props - arguments to a function when we create a component inside of react and we want to render it, read only, describes what we see*/
 /*state - influences output, must be modified with this.setState()*/
 

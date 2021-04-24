@@ -4,7 +4,7 @@ import DeleteButton from 'components/atoms/DeleteButton/DeleteButton';
 import { StyledAverage, StyledInfo, Wrapper } from './UsersListItem.styles';
 import { UserShape } from 'types';
 import { UsersContext } from 'providers/UsersProvider';
-
+//eventy tworzy sie w Reakcie bardzo podobnie jak w JS
 const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => {
   const { deleteUser } = useContext(UsersContext);
 
