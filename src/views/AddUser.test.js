@@ -4,18 +4,18 @@ import Dashboard from './Dashboard';
 import { screen, fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'helpers/renderWithThemeProvider';
 
-describe('Form Field', () => {
+describe('FormField', () => {
   it('Renders the component', () => {
     renderWithProviders(
       <>
-        <AddUser />
         <Dashboard />
+        <AddUser />
       </>
     );
-    fireEvent.change(screen.getByTestId('Name'), { target: { value: 'Grażyna' } });
-    fireEvent.change(screen.getByTestId('Attendance'), { target: { value: '55%' } });
-    fireEvent.change(screen.getByTestId('Average'), { target: { value: '4.5' } });
+    fireEvent.change(screen.getByTestId('Name'), { target: { value: 'Marek' } });
+    fireEvent.change(screen.getByTestId('Attendance'), { target: { value: '39%' } });
+    fireEvent.change(screen.getByTestId('Average'), { target: { value: '2.3' } });
     fireEvent.click(screen.getByText('Add'));
-    screen.getByText('Grażyna');
+    screen.getByText('Marek');
   });
 });

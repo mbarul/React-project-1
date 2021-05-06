@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { ViewWrapper } from '../../src/components/molecules/ViewWrapper/ViewWrapper';
 import UsersList from '../components/organisms/UsersList/UsersList';
 import { UsersContext } from 'providers/UsersProvider';
-
+//React Context - pozwala na używanie deklaracji, bez potrzebu przekazywania propa
+//ile razy przekazywać propa - max 2 razy
 //Dashboard it's a view which have at the moment only one component: Userlist
 const Dashboard = () => {
   const { users } = useContext(UsersContext);

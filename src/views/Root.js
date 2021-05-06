@@ -11,10 +11,13 @@ import { Wrapper } from './Root.styles';
 /*importing navigaion */
 /*import library react-router-dom*/
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+//view
 import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
+//view
 import AddUser from './AddUser';
+//view
 import Dashboard from './Dashboard';
+//adding, deleting users
 import UsersProvider from 'providers/UsersProvider';
 //propsy to informacje przekazane do komponentu, przekazywane w rózny sposób(np. dane,funkcje)
 //Propsy zostały przekazane z rodzica Userlist -usersData do dziecka UsersListitem - idealny przykład
@@ -24,7 +27,8 @@ import UsersProvider from 'providers/UsersProvider';
 //cd zabiezpiecza nas by typy danych się zgadzały, jest po prostu obiektem, gdzie są klucze, właściwości
 /*props - arguments to a function when we create a component inside of react and we want to render it, read only, describes what we see*/
 /*state - influences output, must be modified with this.setState()*/
-
+//provider - specjalny zapis, który oznacza że używamy context, dajemy po kropce .Provider,
+//provider zawiera prop zwany value{{}}
 const Root = () => {
   return (
     <Router>
